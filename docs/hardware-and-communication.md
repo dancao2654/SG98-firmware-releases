@@ -50,11 +50,15 @@ Use the remote updater bundle only on SG98 remote-compatible ESP32-S3 handheld h
 | Hardware model / PCB | How to build or purchase | Input/display style | Support notes |
 | --- | --- | --- | --- |
 | SG98 Remote Universal ESP32-S3 image | This is the release firmware target, not a separate purchasable board. Use it on one of the supported remote boards below. | Auto-detected at boot | The public remote updater uses the universal image and probes supported board peripherals at startup. |
-| Elecrow CrowPanel 1.28inch-HMI ESP32 Rotary Display 240x240 IPS Round Touch Knob Screen | Buy the Elecrow CrowPanel 1.28 rotary/touch board. Official wiki: <https://www.elecrow.com/wiki/CrowPanel_1.28inch-HMI_ESP32_Rotary_Display.html> | Round 240x240 display, rotary encoder, encoder press, capacitive touch | Supported remote board for encoder-first operation. Battery status depends on the added power hardware because this board does not provide the same PMIC path as the Waveshare board. |
-| Elecrow CrowPanel 2.1inch-HMI ESP32 Rotary Display 480x480 IPS Round Touch Knob Screen | Buy the Elecrow CrowPanel 2.1 rotary/touch board. Official product page: <https://www.elecrow.com/crowpanel-2-1inch-hmi-esp32-rotary-display-480-480-ips-round-touch-knob-screen.html> | Round 480x480 display, rotary encoder, encoder press, capacitive touch | Supported larger rotary remote. Useful when a bigger screen is preferred over the smaller 1.28 board. |
-| Waveshare ESP32-S3-Touch-AMOLED-1.75 | Buy the Waveshare `ESP32-S3-Touch-AMOLED-1.75` board. Official wiki: <https://www.waveshare.com/wiki/ESP32-S3-Touch-AMOLED-1.75> | Round 466x466 AMOLED touch display, touch-only primary UI | Supported touch remote with AXP2101 PMIC battery/USB/charging telemetry, QMI8658 motion/orientation support, and expansion pins used by the SG98 pressure profiler wiring. |
+| Elecrow CrowPanel 1.28inch-HMI ESP32 Rotary Display 240x240 IPS Round Touch Knob Screen | Buy the Elecrow CrowPanel 1.28 rotary/touch board. Official wiki: <https://www.elecrow.com/wiki/CrowPanel_1.28inch-HMI_ESP32_Rotary_Display.html> | Round 240x240 display, rotary encoder, encoder press, capacitive touch | Supported remote board for encoder-first operation. Battery status depends on the added power hardware because this board does not provide the same PMIC path as the Waveshare board. Experimental transducer wiring is not currently documented for this board. |
+| Elecrow CrowPanel 2.1inch-HMI ESP32 Rotary Display 480x480 IPS Round Touch Knob Screen | Buy the Elecrow CrowPanel 2.1 rotary/touch board. Official product page: <https://www.elecrow.com/crowpanel-2-1inch-hmi-esp32-rotary-display-480-480-ips-round-touch-knob-screen.html> | Round 480x480 display, rotary encoder, encoder press, capacitive touch | Supported larger rotary remote. Useful when a bigger screen is preferred over the smaller 1.28 board. Experimental transducer wiring is not currently documented for this board. |
+| Waveshare ESP32-S3-Touch-AMOLED-1.75 | Buy the Waveshare `ESP32-S3-Touch-AMOLED-1.75` board. Official wiki: <https://www.waveshare.com/wiki/ESP32-S3-Touch-AMOLED-1.75> | Round 466x466 AMOLED touch display, touch-only primary UI | Supported touch remote with AXP2101 PMIC battery/USB/charging telemetry, QMI8658 motion/orientation support, and the current SG98 experimental pressure-profiler wiring target. |
 
 Remote add-ons such as the battery, 3D printed enclosure, magnetic base, pressure-sensor connector, and pressure transducer wiring are SG98 accessories around the supported remote board. They do not replace the need for one of the supported ESP32-S3 remote boards above.
+
+Case print files for the Waveshare 1.75 remote are published here:
+
+- [Waveshare 1.75 remote case print files](../hardware/waveshare-1.75-remote-case/README.md)
 
 Required remote hardware:
 
@@ -68,7 +72,7 @@ Supported remote features depend on the specific SG98 remote hardware:
 - Touch screen and/or rotary input.
 - Battery, USB power, and charging status display.
 - Motion sensor for wake and screen orientation where present.
-- Pressure sensor input and BLE transducer/profiler mode where wired and enabled.
+- Pressure sensor input and BLE transducer/profiler mode on the currently documented Waveshare 1.75 remote wiring target.
 
 ### Update Bundle Selection
 
@@ -80,6 +84,82 @@ Supported remote features depend on the specific SG98 remote hardware:
 | `SG98-Remote-Updater-osx-arm64.zip` | SG98 remote | Apple Silicon macOS |
 
 Each zip has a matching `.md5` checksum file in the same release.
+
+## Experimental Remote Transducer / Pressure Profiler Mode
+
+The SG98 remote firmware includes an experimental espresso pressure-profiler mode. This feature is not supported on every remote hardware model. The currently documented and supported wiring target is the Waveshare `ESP32-S3-Touch-AMOLED-1.75` remote because that board exposes the pressure-signal GPIO used by the current firmware and has the battery/USB telemetry used by the profiler UI.
+
+This mode is experimental. Verify all wiring before powering the sensor, and do not connect sensor `+5V` to any ESP32-S3 GPIO.
+
+### Remote Hardware Support
+
+| Remote hardware | Profiler/transducer support | Notes |
+| --- | --- | --- |
+| Waveshare ESP32-S3-Touch-AMOLED-1.75 | Experimental supported wiring target | Uses `GPIO17` on H2 for the analog pressure signal, plus H2 `VBUS` and `GND` for the sensor connector. |
+| Elecrow CrowPanel 1.28 rotary/touch | Not currently documented as supported | The normal SG98 remote UI works, but the release docs do not define a safe pressure-sensor wiring path for this board. |
+| Elecrow CrowPanel 2.1 rotary/touch | Not currently documented as supported | The normal SG98 remote UI works, but the release docs do not define a safe pressure-sensor wiring path for this board. |
+
+### Supported Sensor
+
+Current firmware defaults are for this pressure transducer class:
+
+| Requirement | Value |
+| --- | --- |
+| Sensor type | Analog pressure transducer |
+| Pressure range | `0-2 MPa`, equivalent to about `0-20 bar` |
+| Supply | `+5V` sensor supply |
+| Output | `0.4-2.4V` analog signal |
+| Firmware zero point | `400 mV = 0.0 bar` |
+| Firmware full scale | `2400 mV = 20.0 bar` |
+| Graph scale | up to `16.0 bar` |
+
+The pressure signal must stay in the expected `0.4-2.4V` output range. Never feed `5V` into the pressure input GPIO.
+
+### Remote Wiring
+
+Current Waveshare 1.75 wiring target:
+
+| Sensor wire | Remote connection | Notes |
+| --- | --- | --- |
+| `SUP / +5V` | `H2 pin 8 = VBUS / +5V` or another proper regulated `+5V` sensor supply | If running from battery only, use a proper 5V boost/regulator; do not backfeed the board incorrectly. |
+| `OUT / pressure signal` | `GPIO17` on H2 | Firmware pressure ADC input. |
+| `GND` | `H2 pin 7 = GND` | Sensor ground must share remote ground. |
+
+The printable case includes a recessed pressure-connector bay for a detachable 3-pin connector carrying only `SUP`, `OUT`, and `GND`.
+
+### Profiler Operation
+
+- Long-press the remote run button to enter profiler mode.
+- Long-press the remote run button again to leave profiler mode.
+- The graph does not start immediately; it arms first and starts recording after pressure reaches about `0.5 bar` for about `450 ms`.
+- Samples are read every `100 ms`.
+- The graph redraws about every `120 ms`.
+- The stored pressure window is about `60 seconds`.
+- The visible graph window is about `30 seconds` and scrolls as brew time exceeds the visible window.
+- The graph uses a `16 bar` display scale even though the sensor full scale is `20 bar`.
+- Remote deep sleep is disabled while profiler mode is active.
+
+### Bean Conqueror / BooKoo Compatibility
+
+Profiler mode also exposes an experimental BooKoo-compatible BLE transducer service so apps such as Bean Conqueror can read pressure data.
+
+Current BLE behavior:
+
+| Item | Value |
+| --- | --- |
+| Advertised name | `BOOKOO_EM SG98` |
+| Pressure service | `0FFF` |
+| Command characteristic | `FF01` |
+| Pressure notify characteristic | `FF02` |
+| Power characteristic | `FF03` |
+| Battery service | `180F` / `2A19` |
+| Device information service | `180A` |
+| Model string | `BOOKOO_EM` |
+| Firmware string | `SG98` |
+| Manufacturer string | `LingLong` |
+| Pressure notify period | about `100 ms` |
+
+BLE is started when profiler mode is entered and stopped when profiler mode exits. The firmware supports BooKoo-style configuration fields for max brew time, initial pressure, standby time, and auto-stop time, and stores those values persistently after a short quiet period.
 
 ## Communication Scheme
 
