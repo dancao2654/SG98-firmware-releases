@@ -18,6 +18,8 @@ Use the controller updater bundle only on SG98 controller-compatible ESP32-S3 ha
 | Adafruit ESP32-S3 Feather controller prototype | Buy an Adafruit ESP32-S3 Feather and wire the SG98 controller peripherals to the firmware pin map. | Full-size or bench prototype | Supported for development and custom wiring. Requires external RS-485 transceiver, display, start button, start LED, encoder, and encoder switch wiring; it is not a drop-in SG98 controller by itself. |
 | Waveshare ESP32-S3-RS485-CAN | Buy the Waveshare `ESP32-S3-RS485-CAN` board. Official product/wiki: <https://www.waveshare.com/wiki/ESP32-S3-RS485-CAN> | Headless controller | Supported as a compact headless controller with onboard RS-485. It has no SG98 local display/buttons/encoder path, so remote ESP-NOW and Wi-Fi recovery protections are important. |
 
+For original SG98 controller PCB hardware or assembled controller hardware, contact [isPointless](https://github.com/isPointless) or [duerlis](https://github.com/duerlis) for current availability and purchase options.
+
 The public controller updater bundle is built for the SG98 universal controller image. Do not assume an arbitrary ESP32-S3 board is compatible just because it has the same chip; the firmware expects one of the supported pin maps above.
 
 Required controller hardware:
