@@ -7,6 +7,7 @@ The source firmware repository is private. This repository is only for sharing i
 ## Documentation
 
 - [Hardware and communication guide](docs/hardware-and-communication.md) - supported controller/remote PCBs, purchasable hardware models, communication cases, and failover behavior.
+- [Changelog](CHANGELOG.md) - public updater bundle release notes.
 - [Waveshare 1.75 remote case print files](hardware/waveshare-1.75-remote-case/README.md) - STL files for the battery, magnet, and pressure-connector back-cover case.
 
 ## Downloads

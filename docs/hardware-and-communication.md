@@ -169,7 +169,7 @@ The SG98 system is designed around a low-resource remote-to-controller link, wit
 
 The normal parked state is ESP-NOW:
 
-- Controller radio state: `Wi-Fi disabled` in the user menu.
+- Controller radio state: `ESP-NOW` in the `Wireless` menu.
 - Remote radio state: ESP-NOW remote link.
 - Wi-Fi AP and home Wi-Fi client are off.
 - Remote commands, status polling, menu reads/writes, heartbeats, and environment sync all use ESP-NOW frames.
@@ -204,9 +204,11 @@ The SG98 remote protocol is text framed. The main frames include:
 
 Wi-Fi credentials are hex-encoded inside the protocol frame before being sent across the link.
 
+Environment sync is opportunistic. Status packets include whether the controller currently has valid time and weather data. If the remote has valid environment data and sees the controller is missing it, the remote can send an `ENV` frame during the next normal link service. The controller accepts that data only as a fallback, so internet-synced controller data still wins when available.
+
 ### Wi-Fi Setup And Web UI
 
-When Wi-Fi is enabled from the controller menu:
+When `WiFi` is selected from the controller `Wireless` menu:
 
 - The controller opens its Wi-Fi setup/web session.
 - The controller AP is reachable at `http://192.168.4.1` when the phone/tablet/computer is connected to the SG98 controller AP.
@@ -225,11 +227,11 @@ http://192.168.4.1
 
 | UI wording | Internal behavior | Normal use |
 | --- | --- | --- |
-| Wi-Fi disabled | ESP-NOW parked state | Lowest resource mode for remote/controller operation. |
-| Wi-Fi enabled | Temporary Wi-Fi setup/web session | Configure home Wi-Fi, use web UI, sync time/weather, then return to ESP-NOW. |
+| WiFi | Temporary Wi-Fi setup/web session | Configure home Wi-Fi, use web UI, sync time/weather, then return to ESP-NOW. |
+| ESP-NOW | ESP-NOW parked state | Lowest resource mode for remote/controller operation. |
 | Radio off | All radio disabled | Full-size controller local-only use. Not allowed on headless builds. |
 
-ESP-NOW is intentionally presented as `Wi-Fi disabled` because users normally care whether phone/web Wi-Fi is open. Internally, this is still the normal remote-control radio path.
+The `Wireless` submenu also contains network information and network reset actions.
 
 ## Connection And Failover Cases
 
@@ -266,5 +268,5 @@ The firmware includes several protections so a controller is not stranded:
 | Phone joins SG98 AP but no captive portal appears | Open `http://192.168.4.1` manually. |
 | Controller seems stuck in Wi-Fi setup | Complete home Wi-Fi setup and wait for sync, wait for the 10-minute idle timeout, or reboot to return to ESP-NOW. |
 | Remote cannot find controller | Keep both devices close, reboot the controller, and allow discovery/recovery time. A headless controller should open Wi-Fi recovery if it hears no remote traffic. |
-| Full-size controller is in Radio off | Use the local controller UI to re-enable Wi-Fi or return to `Wi-Fi disabled` for ESP-NOW operation. |
+| Full-size controller is in Radio off | Use the local controller UI to select `WiFi` for setup/web access or `ESP-NOW` for normal remote operation. |
 | Wrong updater bundle was selected | Stop before flashing. Use controller bundles only for controller hardware and remote bundles only for remote hardware. |
