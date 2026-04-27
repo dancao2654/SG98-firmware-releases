@@ -10,6 +10,16 @@ The firmware source is private. The updater bundles in this release repository a
 
 Use the controller updater bundle only on SG98 controller-compatible ESP32-S3 hardware.
 
+#### Supported Controller Hardware Models / PCBs
+
+| Hardware model / PCB | How to build or purchase | Controller style | Support notes |
+| --- | --- | --- | --- |
+| SG98 Controller PCB REV0A / assembled SG98 controller PCB | Build from the SG98 PCB fabrication package or buy an assembled SG98 controller PCB from the project maintainer/supplier. | Full-size controller | Primary SG98 controller PCB. Uses the SG98 pinout, ESP32-S3 module, onboard RS-485 transceiver, local display, run button, encoder, and encoder button when fully populated. |
+| Adafruit ESP32-S3 Feather controller prototype | Buy an Adafruit ESP32-S3 Feather and wire the SG98 controller peripherals to the firmware pin map. | Full-size or bench prototype | Supported for development and custom wiring. Requires external RS-485 transceiver, display, start button, start LED, encoder, and encoder switch wiring; it is not a drop-in SG98 controller by itself. |
+| Waveshare ESP32-S3-RS485-CAN | Buy the Waveshare `ESP32-S3-RS485-CAN` board. Official product/wiki: <https://www.waveshare.com/wiki/ESP32-S3-RS485-CAN> | Headless controller | Supported as a compact headless controller with onboard RS-485. It has no SG98 local display/buttons/encoder path, so remote ESP-NOW and Wi-Fi recovery protections are important. |
+
+The public controller updater bundle is built for the SG98 universal controller image. Do not assume an arbitrary ESP32-S3 board is compatible just because it has the same chip; the firmware expects one of the supported pin maps above.
+
 Required controller hardware:
 
 - ESP32-S3 based controller target supported by the SG98 controller firmware.
@@ -32,6 +42,17 @@ Optional controller hardware:
 ### Remote
 
 Use the remote updater bundle only on SG98 remote-compatible ESP32-S3 handheld hardware.
+
+#### Supported Remote Hardware Models / PCBs
+
+| Hardware model / PCB | How to build or purchase | Input/display style | Support notes |
+| --- | --- | --- | --- |
+| SG98 Remote Universal ESP32-S3 image | This is the release firmware target, not a separate purchasable board. Use it on one of the supported remote boards below. | Auto-detected at boot | The public remote updater uses the universal image and probes supported board peripherals at startup. |
+| Elecrow CrowPanel 1.28inch-HMI ESP32 Rotary Display 240x240 IPS Round Touch Knob Screen | Buy the Elecrow CrowPanel 1.28 rotary/touch board. Official wiki: <https://www.elecrow.com/wiki/CrowPanel_1.28inch-HMI_ESP32_Rotary_Display.html> | Round 240x240 display, rotary encoder, encoder press, capacitive touch | Supported remote board for encoder-first operation. Battery status depends on the added power hardware because this board does not provide the same PMIC path as the Waveshare board. |
+| Elecrow CrowPanel 2.1inch-HMI ESP32 Rotary Display 480x480 IPS Round Touch Knob Screen | Buy the Elecrow CrowPanel 2.1 rotary/touch board. Official product page: <https://www.elecrow.com/crowpanel-2-1inch-hmi-esp32-rotary-display-480-480-ips-round-touch-knob-screen.html> | Round 480x480 display, rotary encoder, encoder press, capacitive touch | Supported larger rotary remote. Useful when a bigger screen is preferred over the smaller 1.28 board. |
+| Waveshare ESP32-S3-Touch-AMOLED-1.75 | Buy the Waveshare `ESP32-S3-Touch-AMOLED-1.75` board. Official wiki: <https://www.waveshare.com/wiki/ESP32-S3-Touch-AMOLED-1.75> | Round 466x466 AMOLED touch display, touch-only primary UI | Supported touch remote with AXP2101 PMIC battery/USB/charging telemetry, QMI8658 motion/orientation support, and expansion pins used by the SG98 pressure profiler wiring. |
+
+Remote add-ons such as the battery, 3D printed enclosure, magnetic base, pressure-sensor connector, and pressure transducer wiring are SG98 accessories around the supported remote board. They do not replace the need for one of the supported ESP32-S3 remote boards above.
 
 Required remote hardware:
 

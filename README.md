@@ -6,7 +6,7 @@ The source firmware repository is private. This repository is only for sharing i
 
 ## Documentation
 
-- [Hardware and communication guide](docs/hardware-and-communication.md)
+- [Hardware and communication guide](docs/hardware-and-communication.md) - supported controller/remote PCBs, purchasable hardware models, communication cases, and failover behavior.
 
 ## Downloads
 
