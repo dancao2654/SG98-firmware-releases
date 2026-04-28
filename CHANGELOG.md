@@ -1,5 +1,29 @@
 # Changelog
 
+## v2026.04.28-190e8987
+
+Build source commit: `190e8987`
+
+Upgrade notes:
+
+- Fixes the firmware OTA manifest resolver so both controller and remote point at the public `SG98-firmware-releases` raw URLs instead of private-source URLs.
+- Fixes the remote dock clock timezone path so synced clock display uses local Pacific time instead of UTC.
+- Adds a private-repo release maintenance document covering build, bundle, OTA, and public upload steps.
+- Keeps generated firmware metadata clean even while tracked publish artifacts are changing during bundle generation.
+- Refreshes all public OTA application binaries and full first-time updater bundles for Windows x64 and Apple Silicon macOS.
+
+Files:
+
+- `bundles/SG98-Updater-win-x64.zip`
+- `bundles/SG98-Updater-osx-arm64.zip`
+- `bundles/SG98-Remote-Updater-win-x64.zip`
+- `bundles/SG98-Remote-Updater-osx-arm64.zip`
+- matching `.md5` checksum files
+- `ota/controller-universal-s3/sg98-ota-manifest.json`
+- `ota/controller-universal-s3/flash-03-0x10000-firmware.bin`
+- `ota/remote-universal-s3/sg98-ota-manifest.json`
+- `ota/remote-universal-s3/flash-03-0x10000-firmware.bin`
+
 ## v2026.04.28-79aafbf3
 
 Build source commit: `79aafbf3`

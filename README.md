@@ -16,6 +16,9 @@ Use the latest GitHub Release:
 
 https://github.com/dancao2654/SG98-firmware-releases/releases/latest
 
+The same full updater bundles are also committed under `bundles/` for simple
+direct sharing from the public repository.
+
 ## Full Updater Bundles
 
 - `SG98-Updater-win-x64.zip` - controller updater for Windows
