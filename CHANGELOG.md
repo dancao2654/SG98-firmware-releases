@@ -1,5 +1,29 @@
 # Changelog
 
+## v2026.04.28-79aafbf3
+
+Build source commit: `79aafbf3`
+
+Upgrade notes:
+
+- Adds OTA-capable controller and remote firmware builds.
+- Adds public OTA manifest and application binary files for device-side HTTPS download.
+- Keeps full first-time updater bundles available for Windows x64 and Apple Silicon macOS.
+- Improves the firmware About page so version, build, OTA slot, and update information are readable as a real child page.
+- Includes the latest controller/remote communication, wireless, menu, and remote UI fixes from the private firmware source.
+
+Files:
+
+- `SG98-Updater-win-x64.zip`
+- `SG98-Updater-osx-arm64.zip`
+- `SG98-Remote-Updater-win-x64.zip`
+- `SG98-Remote-Updater-osx-arm64.zip`
+- matching `.md5` checksum files
+- `ota/controller-universal-s3/sg98-ota-manifest.json`
+- `ota/controller-universal-s3/flash-03-0x10000-firmware.bin`
+- `ota/remote-universal-s3/sg98-ota-manifest.json`
+- `ota/remote-universal-s3/flash-03-0x10000-firmware.bin`
+
 ## v2026.04.27-ef29982
 
 Build source commit: `ef29982`
