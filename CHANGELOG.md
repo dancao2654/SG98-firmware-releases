@@ -1,5 +1,24 @@
 # Changelog
 
+## v2026.04.28-6a227d55
+
+Build source commit: `6a227d55`
+
+Upgrade notes:
+
+- Refreshes the full first-time/recovery updater bundles for controller and remote.
+- Separates the release workflow so full updater bundles and OTA assets can be built and published independently.
+- Leaves the public OTA folders unchanged from the tested OTA release.
+
+Files:
+
+- `bundles/SG98-Updater-win-x64.zip`
+- `bundles/SG98-Updater-osx-arm64.zip`
+- `bundles/SG98-Remote-Updater-win-x64.zip`
+- `bundles/SG98-Remote-Updater-osx-arm64.zip`
+- matching `.md5` checksum files
+- `bundles/sg98-release-manifest.json`
+
 ## v2026.04.28-f29f86a4
 
 Build source commit: `f29f86a4`
