@@ -1,5 +1,29 @@
 # Changelog
 
+## v2026.04.28-6fd491b3
+
+Build source commit: `6fd491b3`
+
+Upgrade notes:
+
+- Adds the polished LingLong SG-98 motor-detection screen with the generated grinder artwork.
+- Refines controller and remote Wi-Fi/ESP-NOW status messaging, fallback notices, and bottom-curve network status styling.
+- Improves remote idle clock visibility, charging/power-state indication, and Wi-Fi/AP connectivity behavior.
+- Updates OTA download/update handling for the current controller and remote universal builds.
+- Refreshes all public OTA application binaries and full first-time updater bundles for Windows x64 and Apple Silicon macOS.
+
+Files:
+
+- `bundles/SG98-Updater-win-x64.zip`
+- `bundles/SG98-Updater-osx-arm64.zip`
+- `bundles/SG98-Remote-Updater-win-x64.zip`
+- `bundles/SG98-Remote-Updater-osx-arm64.zip`
+- matching `.md5` checksum files
+- `ota/controller-universal-s3/sg98-ota-manifest.json`
+- `ota/controller-universal-s3/flash-03-0x10000-firmware.bin`
+- `ota/remote-universal-s3/sg98-ota-manifest.json`
+- `ota/remote-universal-s3/flash-03-0x10000-firmware.bin`
+
 ## v2026.04.28-190e8987
 
 Build source commit: `190e8987`
