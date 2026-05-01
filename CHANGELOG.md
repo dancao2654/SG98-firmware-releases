@@ -1,5 +1,20 @@
 # Changelog
 
+## v2026.04.28-f29f86a4
+
+Build source commit: `f29f86a4`
+
+Upgrade notes:
+
+- Adds a cache-busted application URL to generated remote OTA manifests so device-side updates do not reuse stale GitHub Raw firmware binaries.
+- Refreshes the public remote OTA application binary and manifests for `remote-universal-s3`.
+
+Files:
+
+- `ota/remote-universal-s3/sg98-ota-manifest.json`
+- `ota/remote-universal-s3/sg98-flash-manifest.json`
+- `ota/remote-universal-s3/flash-03-0x10000-firmware.bin`
+
 ## v2026.04.28-71159891
 
 Build source commit: `71159891`
