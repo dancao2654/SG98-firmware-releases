@@ -1,5 +1,22 @@
 # Changelog
 
+## v2026.04.28-71159891
+
+Build source commit: `71159891`
+
+Upgrade notes:
+
+- Hardens the remote home-Wi-Fi STA path using the same connection handling that fixed the controller.
+- Adds USB diagnostic Wi-Fi fields for STA password length, active connect attempt, last STA event, and disconnect reason.
+- Disables remote Wi-Fi modem sleep while Wi-Fi is active so saved home-network joins complete reliably.
+- Refreshes the public remote OTA application binary and manifest for `remote-universal-s3`.
+
+Files:
+
+- `ota/remote-universal-s3/sg98-ota-manifest.json`
+- `ota/remote-universal-s3/sg98-flash-manifest.json`
+- `ota/remote-universal-s3/flash-03-0x10000-firmware.bin`
+
 ## v2026.04.28-6fd491b3
 
 Build source commit: `6fd491b3`
