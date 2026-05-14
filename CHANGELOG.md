@@ -1,5 +1,28 @@
 # Changelog
 
+## v2026.04.28-426151dc-dirty
+
+Build source commit: `426151dc`
+
+Local workspace state: dirty build. Private source changes were left local and
+were not committed or pushed.
+
+Upgrade notes:
+
+- Adds controller support for the KRS `XB130AEA20025-SHL` motor profile, using
+  Modbus RTU over RS-485 and motor code `47`.
+- Refreshes the public controller and remote OTA application binaries and
+  manifests from the current local workspace.
+
+Files:
+
+- `ota/controller-universal-s3/sg98-ota-manifest.json`
+- `ota/controller-universal-s3/sg98-flash-manifest.json`
+- `ota/controller-universal-s3/flash-03-0x10000-firmware.bin`
+- `ota/remote-universal-s3/sg98-ota-manifest.json`
+- `ota/remote-universal-s3/sg98-flash-manifest.json`
+- `ota/remote-universal-s3/flash-03-0x10000-firmware.bin`
+
 ## v2026.04.28-6a227d55
 
 Build source commit: `6a227d55`
