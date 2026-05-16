@@ -1,5 +1,24 @@
 # Changelog
 
+## v2026.04.28-46bc72ba
+
+Build source commit: `46bc72ba`
+
+Upgrade notes:
+
+- Adds controller support for SEW MOVITRAC/MOVIDRIVE MOVILINK 3PD over RS-485.
+- Adds remote Drive menu parity for all force-drive choices: JMC, RT, KRS, XB130, and SEW.
+- Refreshes the public controller and remote OTA application binaries and manifests from a clean committed source build.
+
+Files:
+
+- `ota/controller-universal-s3/sg98-ota-manifest.json`
+- `ota/controller-universal-s3/sg98-flash-manifest.json`
+- `ota/controller-universal-s3/flash-03-0x10000-firmware.bin`
+- `ota/remote-universal-s3/sg98-ota-manifest.json`
+- `ota/remote-universal-s3/sg98-flash-manifest.json`
+- `ota/remote-universal-s3/flash-03-0x10000-firmware.bin`
+
 ## v2026.04.28-426151dc-dirty
 
 Build source commit: `426151dc`
