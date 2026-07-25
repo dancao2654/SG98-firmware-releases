@@ -1,0 +1,70 @@
+{
+  "schema": "sg98-public-release-manifest-v1",
+  "variant": "external-rs485-dirty",
+  "generatedAtUtc": "2026-07-25T00:27:38Z",
+  "version": "2026.04.28",
+  "gitSha": "90e6795b",
+  "gitDirty": true,
+  "artifacts": [
+    {
+      "fileName": "SG98-Updater-External-RS485-Dirty-osx-arm64.zip",
+      "md5FileName": "SG98-Updater-External-RS485-Dirty-osx-arm64.zip.md5",
+      "runtime": "osx-arm64",
+      "role": "controller",
+      "envName": "controller-universal-s3",
+      "boardName": "controller-universal-s3",
+      "version": "2026.04.28",
+      "gitSha": "90e6795b",
+      "gitDirty": true,
+      "size": 28623960,
+      "sha256": "88d31f6454e33992a6282f33e200c7412f90e8bbc5fb4cb34449502f6d857c25",
+      "md5": "6a682d42553d02795a8a2c170941b998",
+      "application": {
+        "offset": "0x10000",
+        "fileName": "flash-03-0x10000-firmware.bin",
+        "sha256": "7638b7415ba4432169ae735a89247db1917025a63532a902b2927578b9d42b2a",
+        "size": 2063488
+      },
+      "updatePolicy": {
+        "schema": "sg98-update-policy-v1",
+        "defaultMode": "application",
+        "appOnlySince": "2026.04.28",
+        "applicationOffset": "0x10000",
+        "requiresDeviceCapability": "supportsAppOnlyUpdate",
+        "fallbackMode": "full",
+        "fallbackReason": "Use full flash when the running firmware cannot report SG98 app-only capability, the role/env is incompatible, or the board is in recovery."
+      },
+      "variant": "external-rs485-dirty"
+    },
+    {
+      "fileName": "SG98-Updater-External-RS485-Dirty-win-x64.zip",
+      "md5FileName": "SG98-Updater-External-RS485-Dirty-win-x64.zip.md5",
+      "runtime": "win-x64",
+      "role": "controller",
+      "envName": "controller-universal-s3",
+      "boardName": "controller-universal-s3",
+      "version": "2026.04.28",
+      "gitSha": "90e6795b",
+      "gitDirty": true,
+      "size": 45749010,
+      "sha256": "788a3e8f1f86a889e82c1d38f8bd406029419b6995892decb42a663cf8cda5e0",
+      "md5": "bca443ebdd13fcad755a4e0dce15eb01",
+      "application": {
+        "offset": "0x10000",
+        "fileName": "flash-03-0x10000-firmware.bin",
+        "sha256": "7638b7415ba4432169ae735a89247db1917025a63532a902b2927578b9d42b2a",
+        "size": 2063488
+      },
+      "updatePolicy": {
+        "schema": "sg98-update-policy-v1",
+        "defaultMode": "application",
+        "appOnlySince": "2026.04.28",
+        "applicationOffset": "0x10000",
+        "requiresDeviceCapability": "supportsAppOnlyUpdate",
+        "fallbackMode": "full",
+        "fallbackReason": "Use full flash when the running firmware cannot report SG98 app-only capability, the role/env is incompatible, or the board is in recovery."
+      },
+      "variant": "external-rs485-dirty"
+    }
+  ]
+}

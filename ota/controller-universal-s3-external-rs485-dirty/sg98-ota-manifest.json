@@ -1,0 +1,17 @@
+{
+  "schema": "sg98-ota-manifest-v1",
+  "version": "2026.04.28",
+  "gitSha": "90e6795b",
+  "gitDirty": true,
+  "role": "controller",
+  "envName": "controller-universal-s3",
+  "boardName": "controller-universal-s3",
+  "generatedAtUtc": "2026-07-25T00:19:36Z",
+  "application": {
+    "offset": "0x10000",
+    "fileName": "flash-03-0x10000-firmware.bin",
+    "url": "flash-03-0x10000-firmware.bin?v=90e6795b",
+    "sha256": "7638b7415ba4432169ae735a89247db1917025a63532a902b2927578b9d42b2a",
+    "size": 2063488
+  }
+}

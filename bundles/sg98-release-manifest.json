@@ -9,16 +9,16 @@
       "envName": "controller-universal-s3",
       "boardName": "controller-universal-s3",
       "version": "2026.04.28",
-      "gitSha": "90e6795b",
-      "gitDirty": true,
-      "size": 28623960,
-      "sha256": "88d31f6454e33992a6282f33e200c7412f90e8bbc5fb4cb34449502f6d857c25",
-      "md5": "6a682d42553d02795a8a2c170941b998",
+      "gitSha": "62456ddf",
+      "gitDirty": false,
+      "size": 28618690,
+      "sha256": "1bfe499ec4dafeb18868e330515d1db48eec14722c03d124e23b0ca2794c7002",
+      "md5": "8acd8edc54a116617c197fc4ba0b6562",
       "application": {
         "offset": "0x10000",
         "fileName": "flash-03-0x10000-firmware.bin",
-        "sha256": "7638b7415ba4432169ae735a89247db1917025a63532a902b2927578b9d42b2a",
-        "size": 2063488
+        "sha256": "35d2c13e1610e4dc57a6b979170582cdd6579dacd610ee2235e7064d904b1239",
+        "size": 2054288
       },
       "updatePolicy": {
         "schema": "sg98-update-policy-v1",
@@ -38,16 +38,16 @@
       "envName": "controller-universal-s3",
       "boardName": "controller-universal-s3",
       "version": "2026.04.28",
-      "gitSha": "90e6795b",
-      "gitDirty": true,
-      "size": 45749010,
-      "sha256": "788a3e8f1f86a889e82c1d38f8bd406029419b6995892decb42a663cf8cda5e0",
-      "md5": "bca443ebdd13fcad755a4e0dce15eb01",
+      "gitSha": "62456ddf",
+      "gitDirty": false,
+      "size": 45742111,
+      "sha256": "9661d10fa47975b075a7d99a259a7d19dc3b0512884a7c656c7644afa45ff9fd",
+      "md5": "38f1f66039d8b708117b6e352dd72e38",
       "application": {
         "offset": "0x10000",
         "fileName": "flash-03-0x10000-firmware.bin",
-        "sha256": "7638b7415ba4432169ae735a89247db1917025a63532a902b2927578b9d42b2a",
-        "size": 2063488
+        "sha256": "30171dd6dbf17c370d6d522760d38ea2bd03acfdc0e6b5e4908074297a10439b",
+        "size": 2054288
       },
       "updatePolicy": {
         "schema": "sg98-update-policy-v1",
@@ -118,7 +118,7 @@
       }
     }
   ],
-  "generatedAtUtc": "2026-07-25T00:20:41Z",
+  "generatedAtUtc": "2026-05-07T18:34:04Z",
   "version": "2026.04.28",
-  "gitSha": "90e6795b"
+  "gitSha": "62456ddf"
 }
