@@ -1,0 +1,9 @@
+24ce918fbcbf5725651aa384b6fd5265478c933e34ec3bcc36a48e63df95b745  ota/controller-universal-s3/flash-03-0x10000-firmware-2026.10.25.5-24ce918fbcbf.bin
+e61468872fe8177a79f393edce43f54eb29e4fd8805d9c59d64da396e5482333  ota/remote-universal-s3/flash-03-0x10000-firmware-2026.10.25.5-e61468872fe8.bin
+1a3dfa420b4351ef6d606e6223020efb29fdd51a07c38cfa6d79ff22ee1ec869  ota/remote-waveshare-175/flash-03-0x10000-firmware-2026.10.25.5-1a3dfa420b43.bin
+8ccf7556bc12b290b73e8820c8d3ab141d883a3c3f9b51b3f7f084aa8ac59e24  bundles/SG98-Updater-2026.10.25.5-win-x64.zip
+7afb338dd05e7cd9e7b2261a8ed82e71a42cd4524cd3d6574a8032ba16c89fda  bundles/SG98-Updater-2026.10.25.5-osx-x64.zip
+e0b02bb0c7451fb869f2cd9bc4c4e051f81ed1164fa674cd0369ef7888033ce2  bundles/SG98-Updater-2026.10.25.5-osx-arm64.zip
+68d636bcb52a80ca2b833c3beec412c1e1be09c7181722267c46ac344bf293ad  bundles/SG98-Remote-Updater-2026.10.25.5-win-x64.zip
+e38ebb6efa0a7ea52537d601c0b98ac1a43d645c6801248bd8598a9f821991b6  bundles/SG98-Remote-Updater-2026.10.25.5-osx-x64.zip
+2338ab2a4dcebfa5986456b756fda331d28a08e6192c13666468f2db7bd301dd  bundles/SG98-Remote-Updater-2026.10.25.5-osx-arm64.zip
