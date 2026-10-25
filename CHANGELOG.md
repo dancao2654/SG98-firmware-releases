@@ -1,5 +1,34 @@
 # Changelog
 
+## v2026.10.25.1-e9995562
+
+Build source commit: `e9995562` (clean committed build).
+
+- Adds a TSE-family backend using the TSD/TSE 2024-12-16 manual: read-only AUTO
+  detection, signed speed/direction, signed torque limits, load/RPM telemetry,
+  and drive fault handling. Runtime parameter writes use volatile PA addresses.
+- Adds TSE selection to controller and remote menus and USB/API diagnostics,
+  using the existing motor HAL, probe helpers, Modbus transport and persistence.
+- Preserves external-RS485-first probing and existing motor backends.
+- Cancels running commands after communication loss or drive reboot and requires
+  a fresh Start after recovery. Stop takes priority over pending telemetry.
+- Publishes six versioned full updater bundles for controller and remote on
+  Windows x64, Intel Mac and Apple Silicon Mac, plus all three OTA targets:
+  controller-universal-s3, remote-universal-s3 and remote-waveshare-175.
+- Preserves old bundle filenames and firmware binaries. Previous OTA manifests
+  and files are archived under `ota/archive/before-2026.10.25.1/`.
+
+Important: TSE-B-D-100-KFM operation is based on the family manual, not physical
+hardware validation. Complete the [TSE setup procedure](docs/TSE-Servo-Setup.md)
+before connecting a mechanical load. Shared ramp mapping and automatic torque
+calibration are not implemented for TSE. Software/serial stop is not an emergency
+stop; an independent hardware stop is required.
+
+Validation: all three firmware builds and host regression tests pass. Bundle
+integrity, embedded flash segments, runtime architectures and SHA-256 checksums
+are verified. No physical motor test or device OTA installation was performed
+for this release.
+
 ## v2026.04.28-46bc72ba
 
 Build source commit: `46bc72ba`

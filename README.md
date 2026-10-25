@@ -21,12 +21,23 @@ direct sharing from the public repository.
 
 ## Full Updater Bundles
 
-- `SG98-Updater-win-x64.zip` - controller updater for Windows
-- `SG98-Updater-osx-arm64.zip` - controller updater for Apple Silicon macOS
-- `SG98-Remote-Updater-win-x64.zip` - remote updater for Windows
-- `SG98-Remote-Updater-osx-arm64.zip` - remote updater for Apple Silicon macOS
+Current version: **2026.10.25.1**, build source `e9995562`.
 
-Each zip has a matching `.md5` checksum file.
+| Platform | Controller | Remote |
+| --- | --- | --- |
+| Windows x64 | [Download](https://github.com/dancao2654/SG98-firmware-releases/releases/download/v2026.10.25.1-e9995562/SG98-Updater-2026.10.25.1-win-x64.zip) | [Download](https://github.com/dancao2654/SG98-firmware-releases/releases/download/v2026.10.25.1-e9995562/SG98-Remote-Updater-2026.10.25.1-win-x64.zip) |
+| Intel Mac | [Download](https://github.com/dancao2654/SG98-firmware-releases/releases/download/v2026.10.25.1-e9995562/SG98-Updater-2026.10.25.1-osx-x64.zip) | [Download](https://github.com/dancao2654/SG98-firmware-releases/releases/download/v2026.10.25.1-e9995562/SG98-Remote-Updater-2026.10.25.1-osx-x64.zip) |
+| Apple Silicon Mac | [Download](https://github.com/dancao2654/SG98-firmware-releases/releases/download/v2026.10.25.1-e9995562/SG98-Updater-2026.10.25.1-osx-arm64.zip) | [Download](https://github.com/dancao2654/SG98-firmware-releases/releases/download/v2026.10.25.1-e9995562/SG98-Remote-Updater-2026.10.25.1-osx-arm64.zip) |
+
+Each zip has a matching `.md5` compatibility checksum. SHA-256 values are in
+`bundles/SHA256SUMS-2026.10.25.1.txt` and the release manifest. Previous bundle
+filenames and OTA binaries are preserved.
+
+TSE-family support follows the family manual and is not yet validated on the
+TSE-B-D-100-KFM hardware. Read the [TSE setup guide](docs/TSE-Servo-Setup.md)
+before use. Existing input safety settings are not automatically remapped;
+incompatible settings keep the drive NOT READY. Shared ramp mapping and
+automatic torque calibration are not implemented for TSE.
 
 Do not cross-flash the bundles. Controller bundles are for SG98 controller hardware, and remote bundles are for SG98 remote hardware.
 
@@ -38,5 +49,7 @@ These public raw URLs are intended for device-side HTTPS OTA downloads:
   `https://raw.githubusercontent.com/dancao2654/SG98-firmware-releases/main/ota/controller-universal-s3/sg98-ota-manifest.json`
 - Remote OTA manifest:
   `https://raw.githubusercontent.com/dancao2654/SG98-firmware-releases/main/ota/remote-universal-s3/sg98-ota-manifest.json`
+- Waveshare 1.75 remote OTA manifest:
+  `https://raw.githubusercontent.com/dancao2654/SG98-firmware-releases/main/ota/remote-waveshare-175/sg98-ota-manifest.json`
 
 Each OTA manifest points to the matching application firmware binary in the same folder and includes the SHA-256 hash and expected file size.
