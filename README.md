@@ -46,10 +46,11 @@ Do not cross-flash the bundles. Controller bundles are for SG98 controller hardw
 These public raw URLs are intended for device-side HTTPS OTA downloads:
 
 The controller, universal remote, and Waveshare 1.75 remote OTA channels are
-paired at **2026.10.27.1** (`438efcc3-dirty`). This validation build includes
-the remote's graphical System Update screen and the captured KFM detection
-signature. KFM motor run control is not hardware-validated; do not treat
-successful detection as authorization to run an uncommissioned drive.
+paired at **2026.10.27.1** (`32526e4d`, clean committed build). This build includes
+the remote's graphical System Update screen, the captured KFM detection
+signature, and the KFM-specific baud-rate menu. KFM motor run control is not
+hardware-validated; do not treat successful detection as authorization to run
+an uncommissioned drive.
 
 - Controller OTA manifest:
   `https://raw.githubusercontent.com/dancao2654/SG98-firmware-releases/main/ota/controller-universal-s3/sg98-ota-manifest.json`

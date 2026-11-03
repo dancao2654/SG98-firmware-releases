@@ -7,9 +7,11 @@ Build source commit: `32526e4d` (clean committed build).
 - Adds a KFM-specific baud-rate menu with supported rates and readback verification.
 - Improves the remote System Update progress screen.
 - Publishes all six full controller and remote updater bundles for Windows x64, Intel Mac, and Apple Silicon Mac.
+- Publishes OTA firmware, flash manifests, and OTA manifests for the controller, universal remote, and Waveshare 1.75 remote channels.
 
 Files:
 
+- Three OTA channel firmware images and manifests under `ota/`.
 - Six versioned controller and remote updater ZIPs under `bundles/`.
 - Matching `.md5` checksums, `SHA256SUMS-2026.10.27.1.txt`, and `sg98-release-manifest.json`.
 
