@@ -21,16 +21,16 @@ direct sharing from the public repository.
 
 ## Full Updater Bundles
 
-Current version: **2026.10.25.1**, build source `e9995562`.
+Current version: **2026.10.27.1**, build source `32526e4d`.
 
 | Platform | Controller | Remote |
 | --- | --- | --- |
-| Windows x64 | [Download](https://github.com/dancao2654/SG98-firmware-releases/releases/download/v2026.10.25.1-e9995562/SG98-Updater-2026.10.25.1-win-x64.zip) | [Download](https://github.com/dancao2654/SG98-firmware-releases/releases/download/v2026.10.25.1-e9995562/SG98-Remote-Updater-2026.10.25.1-win-x64.zip) |
-| Intel Mac | [Download](https://github.com/dancao2654/SG98-firmware-releases/releases/download/v2026.10.25.1-e9995562/SG98-Updater-2026.10.25.1-osx-x64.zip) | [Download](https://github.com/dancao2654/SG98-firmware-releases/releases/download/v2026.10.25.1-e9995562/SG98-Remote-Updater-2026.10.25.1-osx-x64.zip) |
-| Apple Silicon Mac | [Download](https://github.com/dancao2654/SG98-firmware-releases/releases/download/v2026.10.25.1-e9995562/SG98-Updater-2026.10.25.1-osx-arm64.zip) | [Download](https://github.com/dancao2654/SG98-firmware-releases/releases/download/v2026.10.25.1-e9995562/SG98-Remote-Updater-2026.10.25.1-osx-arm64.zip) |
+| Windows x64 | [Download](https://github.com/dancao2654/SG98-firmware-releases/releases/download/v2026.10.27.1-32526e4d/SG98-Updater-2026.10.27.1-win-x64.zip) | [Download](https://github.com/dancao2654/SG98-firmware-releases/releases/download/v2026.10.27.1-32526e4d/SG98-Remote-Updater-2026.10.27.1-win-x64.zip) |
+| Intel Mac | [Download](https://github.com/dancao2654/SG98-firmware-releases/releases/download/v2026.10.27.1-32526e4d/SG98-Updater-2026.10.27.1-osx-x64.zip) | [Download](https://github.com/dancao2654/SG98-firmware-releases/releases/download/v2026.10.27.1-32526e4d/SG98-Remote-Updater-2026.10.27.1-osx-x64.zip) |
+| Apple Silicon Mac | [Download](https://github.com/dancao2654/SG98-firmware-releases/releases/download/v2026.10.27.1-32526e4d/SG98-Updater-2026.10.27.1-osx-arm64.zip) | [Download](https://github.com/dancao2654/SG98-firmware-releases/releases/download/v2026.10.27.1-32526e4d/SG98-Remote-Updater-2026.10.27.1-osx-arm64.zip) |
 
 Each zip has a matching `.md5` compatibility checksum. SHA-256 values are in
-`bundles/SHA256SUMS-2026.10.25.1.txt` and the release manifest. Previous bundle
+`bundles/SHA256SUMS-2026.10.27.1.txt` and the release manifest. Previous bundle
 filenames and OTA binaries are preserved.
 
 TSE-family support follows the family manual and is not yet validated on the

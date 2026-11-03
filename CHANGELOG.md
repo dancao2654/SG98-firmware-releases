@@ -1,5 +1,20 @@
 # Changelog
 
+## v2026.10.27.1-32526e4d
+
+Build source commit: `32526e4d` (clean committed build).
+
+- Adds a KFM-specific baud-rate menu with supported rates and readback verification.
+- Improves the remote System Update progress screen.
+- Publishes all six full controller and remote updater bundles for Windows x64, Intel Mac, and Apple Silicon Mac.
+
+Files:
+
+- Six versioned controller and remote updater ZIPs under `bundles/`.
+- Matching `.md5` checksums, `SHA256SUMS-2026.10.27.1.txt`, and `sg98-release-manifest.json`.
+
+Validation: both firmware targets built successfully. All six bundle ZIPs, release metadata, and checksums were verified. KFM motor operation was not physically tested, and no device was flashed as part of this release.
+
 ## v2026.10.25.1-e9995562
 
 Build source commit: `e9995562` (clean committed build).
